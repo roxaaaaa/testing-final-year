@@ -1,0 +1,36 @@
+OLLAMA_BASE_URL=http://localhost:11434/v1
+
+# If Ollama is unreachable, question generation falls back to OpenAI using CHATGPT_MODEL (requires OPENAI_API_KEY).
+
+MODEL_NAME=llama3.1:8b
+
+CHATGPT_MODEL=gpt-4o-mini
+
+# Security
+# API key for OpenAI (required if not using local Ollama)
+OPENAI_API_KEY=your-openai-api-key
+
+
+# D-ID — Talks API (photo avatar + speech) on the practice page (optional; text feedback works without it)
+DID_API_KEY=your-d-id-api-key
+
+# Enable D-ID avatar video (POST /talks). Legacy alias: DID_CLIPS_ENABLED
+DID_AVATAR_ENABLED=true
+
+# Face image URL (HTTPS, .jpg or .png). Default: D-ID's William_m presenter (stable CDN; fits teacher-style + male Irish voice).
+# Alternatives (if your D-ID plan can access them): .../DefaultPresenters/Noelle_f/image.png , .../Emma_f/image.png
+# DID_TALK_SOURCE_URL=https://create-images-results.d-id.com/DefaultPresenters/William_m/image.png
+
+# Microsoft Neural voice id for speech (e.g. en-IE-ConnorNeural for Irish English male)
+# DID_TALK_VOICE_ID=en-IE-ConnorNeural
+
+# Browser origin for CORS (no trailing slash).
+# Local:
+FRONTEND_URL=http://localhost:3000
+# Production (Render backend + Vercel UI example): set only in Render env, not committed.
+# FRONTEND_URL=https://your-app.vercel.app
+
+# Server Settings
+
+PORT=8000
+DEBUG=True
